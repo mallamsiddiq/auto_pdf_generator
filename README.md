@@ -31,7 +31,7 @@ To have the app locally on your machine.
 
 ## With docker :
 
-If docker docker compose is installed right inside the app’s root directory kidly run
+If docker and docker-compose is installed right inside the app’s root directory kidly run
 
 ** docker-compose up
 
