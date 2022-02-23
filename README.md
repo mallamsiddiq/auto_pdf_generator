@@ -52,7 +52,7 @@ If docker is not installed relax you’re still good to go. Inside the root dire
 
 And again boom!! Your app is running locally on port :8000
 
-And navigating location is only different from the hosted by the port url, change sodiq-dukkainic.herokuapp.com to 127.0.0.1:8000
+And navigating locally is only different from the hosted one by the port url, change 'sodiq-dukkainic.herokuapp.com' to '127.0.0.1:8000'
 
 
 # Limitations:
