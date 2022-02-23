@@ -2,7 +2,6 @@ __pycache__
 *.pyc
 env/
 db.sqlite3
-.env
 dukenv/
 media/
 staticfiles/
