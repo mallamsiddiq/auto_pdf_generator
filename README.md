@@ -59,3 +59,5 @@ And navigating locally is only different from the hosted one by the port url, ch
 
 As at the time of pushing the app I'm having issues with my aws account and so uploaded files might not be saved into the bucket until later. One of the reasons why I'm turning in so late.
 
+note: i have the the .env file here only for ease of running locally, relax!! no special info or key is exposed.
+
