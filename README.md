@@ -18,10 +18,12 @@ Even though swagger doc is really a nice ui feature you can ofcourse and most ev
 
 # Running 
 
-This app is pushed to :: and hosted on heroku on port ::  . you can run locally just follow the following steps:
+This app is pushed to :https://github.com/mallamsiddiq/StayQrious and hosted on heroku on port :http://sodiq-dukkainic.herokuapp.com/  . you can run locally just follow the following steps:
+
 In you cli run 
 
 ** git clone https://github.com/mallamsiddiq/StayQrious
+
 
 
 To have the app locally on your machine.
@@ -32,6 +34,7 @@ To have the app locally on your machine.
 If docker docker compose is installed right inside the app’s root directory kidly run
 
 ** docker-compose up
+
 ** docker-compose run
 
 And boom!! Your app is running locally on port :8000
@@ -42,7 +45,9 @@ And boom!! Your app is running locally on port :8000
 If docker is not installed relax you’re still good to go. Inside the root directory again run (with python and pip installed):
 
 **  pip install -r requirements.txt
+
 **  python manage.py migrate
+
 **  python manage.py runserver
 
 And again boom!! Your app is running locally on port :8000
