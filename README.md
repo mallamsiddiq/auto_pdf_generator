@@ -22,7 +22,7 @@ This app is pushed to :https://github.com/mallamsiddiq/StayQrious and hosted on 
 
 In you cli run 
 
-** git clone https://github.com/mallamsiddiq/StayQrious
+** git clone https://github.com/SODIQ-STAYQRIOUS/sodiq-dukkainc.git
 
 
 
