@@ -4,7 +4,7 @@ from django.views.generic import View
 from rest_framework.views import APIView
 from .process import html_to_pdf 
 from xhtml2pdf import pisa
-from .serializers import DocSerializer,TranscSerializer
+from .serializers import DocSerializer,TranscSerializer,TranscCreateSerializer
 from .models import Document,Transaction
 from .filters import DocFilter
 from rest_framework import generics, status
@@ -33,13 +33,23 @@ class DocView(generics.ListAPIView):
 
 
 
-class TranscView(generics.ListAPIView):
+class TranscView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = Transaction.objects.all()
-    serializer_class = TranscSerializer
-    def post(self, request, format=None):
-        user_instance=User.objects.get(email='gld3@gmail.com')
-        serializer = self.serializer_class(data=self.request.data)
+    # 
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return TranscSerializer
+        return TranscCreateSerializer
+    # serializer_class = get_serializer_class
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+    def create(self, request,format=None, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        user_instance=request.user
+        # serializer = self.get_serializer(queryset, many=True)
         serializer.is_valid(raise_exception=True)
         save_instance=serializer.save(user=user_instance)
 
@@ -54,14 +64,9 @@ class TranscView(generics.ListAPIView):
         return Response('hurray transaction created with 10 recipts pdf accordindinlly', status=200)
 
 
-class RegisterView(generics.ListCreateAPIView):
+class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    def list(self, request):
-        queryset = self.get_queryset()
-        serializer = self.serializer_class(queryset, many=True)
-        # return Response(serializer.data)
-        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def post(self, request,):
         serializer = UserSerializer(data=request.data)

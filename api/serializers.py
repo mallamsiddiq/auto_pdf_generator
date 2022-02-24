@@ -43,4 +43,10 @@ class TranscSerializer(serializers.ModelSerializer):
 		extra_kwargs = {
             'description': {'required': True,'validators':[required]}
         }
+
         # exclude=['api_id']
+class TranscCreateSerializer(serializers.ModelSerializer):
+    description = serializers.CharField(validators=[required])
+    class Meta:
+        model = Transaction
+        fields = ('description','id')
