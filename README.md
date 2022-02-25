@@ -18,7 +18,7 @@ Even though swagger doc is really a nice ui feature you can ofcourse and most ev
 
 # Running 
 
-This app is pushed to :https://github.com/mallamsiddiq/StayQrious and hosted on heroku on port :http://sodiq-dukkainic.herokuapp.com/  . you can run locally just follow the following steps:
+This app is pushed to :https://github.com/SODIQ-STAYQRIOUS/sodiq-dukkainc.git and hosted on heroku on port :http://sodiq-dukkainic.herokuapp.com/  . you can run locally just follow the following steps:
 
 In you cli run 
 
