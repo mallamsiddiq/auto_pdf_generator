@@ -16,46 +16,46 @@ by providing the provided refresh token at login.
 
 Even though swagger doc is really a nice ui feature you can ofcourse and most eventually will access this api from some different end point, in any case just follow the standard http header requests using jwt bearer token, register a new user in our data base on the port:http://sodiq-dukkainic.herokuapp.com/register/ then login and get access token on the port :http://sodiq-dukkainic.herokuapp.com/login-auth/. Get all documents at :http://sodiq-dukkainic.herokuapp.com/documents/ and filter specific transaction documents on :http://sodiq-dukkainic.herokuapp.com/documents/<transaction-id>/ and see all documents nicely grouped by transactions at :http://sodiq-dukkainic.herokuapp.com/transactions/
 
-# Running 
+## Running 
 
 This app is pushed to :https://github.com/mallamsiddiq/auto_pdf_generator and hosted on heroku on port :http://sodiq-dukkainic.herokuapp.com/  . you can run locally just follow the following steps:
 
 In you cli run 
 
-** git clone https://github.com/mallamsiddiq/auto_pdf_generator.git
+	git clone https://github.com/mallamsiddiq/auto_pdf_generator.git
 
 
 
 To have the app locally on your machine.
 
 
-## With docker :
+### With docker :
 
 If docker and docker-compose is installed right inside the app’s root directory kidly run
 
-** docker-compose up
+	docker-compose build
 
-** docker-compose run
+	docker-compose up
 
 And boom!! Your app is running locally on port :8000
 
 
-## Without docker:
+### Without docker:
 
 If docker is not installed relax you’re still good to go. Inside the root directory again run (with python and pip installed):
 
-**  pip install -r requirements.txt
+	pip install -r requirements.txt
 
-**  python manage.py migrate
+	python manage.py migrate
 
-**  python manage.py runserver
+	python manage.py runserver
 
 And again boom!! Your app is running locally on port :8000
 
 And navigating locally is only different from the hosted one by the port url, change 'sodiq-dukkainic.herokuapp.com' to '127.0.0.1:8000'
 
 
-# Limitations:
+## Limitations:
 
 As at the time of pushing the app I'm having issues with my aws account and so uploaded files might not be saved into the bucket until later.
 
